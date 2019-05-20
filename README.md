@@ -10,7 +10,7 @@ To create SLURM files for a single sample, use the following command
  ./perSampleScripts  sample read1 read2 outdir ref
 ```
 
-An example of this command is
+Example:
 ```
 ./perSampleScripts.sh XH109  \
    /data/Project1/XH109_HCTVGALXX_L2/XH109_HCTVGALXX_L2_1.clean.fq.gz \
@@ -20,7 +20,11 @@ An example of this command is
 ```
 
 ### Creaing SLURM files for all samples in the dataset
-First, prepare a "paired list" of fastQ files - a text file with two columns, holding read1 and read2 files for each sample.
+1. First, prepare a "paired list" of fastQ files - a text file with two columns, holding read1 and read2 files for each sample.
+
+(Note: here we assume there is only one pair of fastq files per sample.)
+
+2. Run:
 
 ```
 ./makeScriptsAll.sh  fastq_pair_list  data_dir
