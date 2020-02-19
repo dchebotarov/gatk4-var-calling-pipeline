@@ -15,8 +15,8 @@ Example:
 ./perSampleScripts.sh XH109  \
    /data/Project1/XH109_HCTVGALXX_L2/XH109_HCTVGALXX_L2_1.clean.fq.gz \
    /data/Project1/XH109_HCTVGALXX_L2/XH109_HCTVGALXX_L2_1.clean.fq.gz  \
-   /scratch2/irri/irri-bioinformatics/output/XH109  \
-    /share/home/chebotarov/ref/R498.fa 
+    output/XH109  \
+    ref/IR8.fa 
 ```
 
 ### Creaing SLURM files for all samples in the dataset
