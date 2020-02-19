@@ -24,14 +24,12 @@ tmpdir=/scratch2/irri/irri-bioinformatics/dima-scratch2/tmp
 #SBATCH --requeue
 #SBATCH --mem=16G
 
-#module load gatk/3.6
-
 module load gatk
 
 sam=$1
 output=$output
 
-/opt/hpcc/gatk/4.0.5.2/bin/gatk SortSam \\
+gatk SortSam \\
   	--INPUT=\$sam \\
   	--OUTPUT=\$output \\
   	--SORT_ORDER=coordinate \\

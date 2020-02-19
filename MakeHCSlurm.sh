@@ -42,7 +42,6 @@ gatk   HaplotypeCaller \\
     --bam-output \$bamout  \\
   --native-pair-hmm-threads 8 \\
   --java-options "-Xmx9g" \\
-  --TMP_DIR=$tmpdir  \\
   --smith-waterman FASTEST_AVAILABLE \\
   --showHidden true \\
 

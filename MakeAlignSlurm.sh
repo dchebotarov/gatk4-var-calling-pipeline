@@ -19,7 +19,7 @@ slurmfile=aln-${samplename}.sl
 #SBATCH --requeue
 #SBATCH --mem=10G
 
-module load bwa    # bwa/0.7.15
+module load bwa 
 
 read1=$read1
 read2=$read2
