@@ -8,7 +8,8 @@ sample="$5"
 
 slurmfile=haplotypecaller-${sample}.sl
 
-tmpdir=/scratch2/irri/irri-bioinformatics/dima-scratch2/tmp
+#tmpdir=/scratch2/irri/irri-bioinformatics/dima-scratch2/tmp
+tmpdir=tmp
 
 >$slurmfile cat <<EOF
 #!/bin/bash
@@ -31,7 +32,7 @@ output=$output
 bamout=$bamout
 #bamout=${output%.vcf}.bamout.bam
 
-/opt/hpcc/gatk/4.0.5.2/bin/gatk   HaplotypeCaller \\
+gatk   HaplotypeCaller \\
     -R \$ref \
     -I \$inputbam \
     -O \$output \\

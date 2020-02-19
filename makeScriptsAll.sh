@@ -2,9 +2,10 @@
 ##########
 # Create SLURM scripts for all samples in the dataset
 
-# Usage:  $0  fastq_pair_list data_dir
+# Usage:  $0  fastq_pair_list data_dir ref
 # where fastq_pair_list is a file with one row per sample listing read1 fastq file in column 1 and read2 in column 2.
 # and data_dir is the directory to search for these files.
+# ref is the path to reference sequence
 
 # Assumptions: 
 #  exactly two FASTQ files per sample. If there are multiple libraries/runs per sample, an additional merging step before HaplotypeCaller will be needed.
@@ -18,6 +19,8 @@ pairedlist=$1
 # Input: a directory where to search for FASTQ files
 # DATADIR=/scratch2/irri/irri-bioinformatics/dima-scratch2/DXH114   #  /home/dima.chebotarov/Data
 DATADIR=$2
+
+ref=$3
 
 # For each row in PairedList
 
@@ -43,8 +46,8 @@ do
 	mkdir -p $commanddir
 	# Create per sample SLURM files
     ./perSampleScripts.sh $sample  $rd1  $rd2    \
-      /scratch2/irri/irri-bioinformatics/dima-scratch2/GY/output/$sample  \
-      /share/home/dima.chebotarov/ref/R498_Chr.fa 
+      output/$sample  \
+      $ref
 
 	# Create "aggregated" SLURM files, for easier submission (at the price of same configuration for all job steps, which is suboptimal)
 	echo "cat aln-${sample}.sl fixmate-${sample}.sl markdup-${sample}.sl addrep-${sample}.sl haplotypecaller-${sample}.sl  > all-${sample}.sl " | sh

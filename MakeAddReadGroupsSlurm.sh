@@ -29,7 +29,7 @@ SID=$sample
 # PU = FLOWCELL.LANE.SAMPLEBARCODE
 
 
-/opt/hpcc/gatk/4.0.5.2/bin/gatk  AddOrReplaceReadGroups \\
+gatk  AddOrReplaceReadGroups \\
   	--INPUT=\$mkdup_bam \\
   	--OUTPUT=\$addrep_bam \\
   	--RGID=\$SID \\

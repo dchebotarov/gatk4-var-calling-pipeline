@@ -6,7 +6,8 @@ sample="$3"
 
 slurmfile=fixmate-${sample}.sl
 
-tmpdir=/scratch2/irri/irri-bioinformatics/dima-scratch2/tmp
+#tmpdir=/scratch2/irri/irri-bioinformatics/dima-scratch2/tmp
+tmpdir=tmp
 
 >$slurmfile cat <<EOF
 #!/bin/bash
@@ -30,9 +31,11 @@ baminput=$1
 #fixmate_bam_output=${baminput%.sorted.bam}.fxmt.bam
 output=$output
 
+# Provide the correct path for GATK
 # java -Xmx8g -jar $picardjar  FixMateInformation \
-#
-/opt/hpcc/gatk/4.0.5.2/bin/gatk FixMateInformation \\
+
+gatk \\
+  FixMateInformation \\
   --INPUT=\$baminput \\
   --OUTPUT=\$output \\
   --CREATE_INDEX=TRUE \\

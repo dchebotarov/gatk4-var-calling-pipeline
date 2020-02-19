@@ -6,7 +6,8 @@ sample="$4"
 
 slurmfile=markdup-${sample}.sl
 
-tmpdir=/scratch2/irri/irri-bioinformatics/dima-scratch2/tmp
+#tmpdir=/scratch2/irri/irri-bioinformatics/dima-scratch2/tmp
+tmpdir=tmp
 
 >$slurmfile cat <<EOF
 #!/bin/bash
@@ -26,7 +27,7 @@ fxmt_bam=$input
 mkdup_bam=$output
 metrics_file=$metrics_file
 
-/opt/hpcc/gatk/4.0.5.2/bin/gatk   MarkDuplicates \\
+gatk   MarkDuplicates \\
  	--INPUT=\$fxmt_bam \\
  	--OUTPUT=\$mkdup_bam \\
  	--VALIDATION_STRINGENCY=LENIENT \\
