@@ -19,6 +19,24 @@ Example:
     ref/IR8.fa 
 ```
 
+This will create the following SLURM scripts (to be run in this order)
+
+```
+aln-${sample}.sl 
+fixmate-${sample}.sl 
+markdup-${sample}.sl 
+addrep-${sample}.sl 
+haplotypecaller-${sample}.sl 
+```
+where ${sample} will be replaced by the given sample name.
+
+Before running these scripts, you may need to prepare the reference data by using
+
+```
+./prepare_reference.sh <path-to-reference>
+```
+
+
 ### Creaing SLURM files for all samples in the dataset
 1. First, prepare a "paired list" of fastQ files - a text file with two columns, holding read1 and read2 files for each sample.
 
