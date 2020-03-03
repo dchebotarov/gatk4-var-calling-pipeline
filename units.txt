@@ -1,0 +1,8 @@
+sample	unit	platform	fq1	fq2
+TestSample1	Unit1	ILLUMINA	data/fastq/rg-1_1.fq.gz	data/fastq/rg-1_2.fq.gz
+IRIS_313-11881	1	ILLUMINA	data/fastq/IRIS_313-11881-rg1_1.fq.gz	data/fastq/IRIS_313-11881-rg1_2.fq.gz
+IRIS_313-11881	2	ILLUMINA	data/fastq/IRIS_313-11881-rg2_1.fq.gz	data/fastq/IRIS_313-11881-rg2_2.fq.gz
+IRIS_313-11881	3	ILLUMINA	data/fastq/IRIS_313-11881-rg3_1.fq.gz	data/fastq/IRIS_313-11881-rg3_2.fq.gz
+IRIS_313-11881	4	ILLUMINA	data/fastq/IRIS_313-11881-rg4_1.fq.gz	data/fastq/IRIS_313-11881-rg4_2.fq.gz
+IRIS_313-11881	5	ILLUMINA	data/fastq/IRIS_313-11881-rg5_1.fq.gz	data/fastq/IRIS_313-11881-rg5_2.fq.gz
+IRIS_313-11881	6	ILLUMINA	data/fastq/IRIS_313-11881-rg6_1.fq.gz	data/fastq/IRIS_313-11881-rg6_2.fq.gz
