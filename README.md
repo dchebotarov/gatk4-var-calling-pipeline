@@ -79,6 +79,14 @@ IRIS_313-11881	6	ILLUMINA	data/fastq/IRIS_313-11881-rg6_1.fq.gz	data/fastq/IRIS_
 ```
 ./makeAll.sh units.txt <reference file>
 ```
+This will create a script folder for each sample, with a subfolder for each sample unit. 
+
+Run the fq2bam scripts for each sample unit and rerun
+
+```
+./makeAll.sh units.txt <reference file>
+```
+Then run haplotypecaller-\*.sl and optionally mergeBam-\*.sl 
 
 ## Customization
 Beforre using, you would probably need to customize the SLURM setting for your cluster, such as CPU cores per task, memory, email address etc.
